@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import ProductCard from "./ProductCard.vue";
 
 const products = ref([
   {
@@ -21,16 +22,16 @@ const products = ref([
     img: "https://m.media-amazon.com/images/I/61UxfXTUyvL._AC_UF894,1000_QL80_DpWeblab_.jpg",
   },
 ]);
+
+function deleteProduct(productId) {
+  products.value = products.value.filter((product) => product.id !== productId)
+}
 </script>
 
 <template>
   <ul class="product-list">
     <li v-for="product in products" :key="product.id">
-      <article class="product-card">
-        <h2 class="product-name">{{ product.name }}</h2>
-        <img :src="product.img" alt="product image" width="100" />
-        <h4>{{ product.price }}€</h4>
-      </article>
+      <ProductCard :product="product" @delete="deleteProduct" />
     </li>
   </ul>
 </template>
@@ -42,21 +43,5 @@ const products = ref([
   padding: 0;
   display: flex;
   gap: 20px;
-
-  .product-card {
-    width: 150px;
-    height: 250px;
-    background-color: lightgray;
-    padding: 5px 15px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    .product-name {
-      font-size: 28px;
-    }
-  }
 }
 </style>
