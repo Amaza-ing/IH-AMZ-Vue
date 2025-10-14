@@ -5,9 +5,9 @@
     <h1 class="header-title">Welcome!</h1>
     <nav>
       <ul class="nav-list">
-        <li><a href="#" class="link">Home</a></li>
-        <li><a href="#" class="link">Blog</a></li>
-        <li><a href="#" class="link">Contact</a></li>
+        <li><RouterLink to="/" class="link">Home</RouterLink></li>
+        <li><RouterLink to="/products" class="link">Products</RouterLink></li>
+        <li><RouterLink to="/basics" class="link">Vue Basics</RouterLink></li>
       </ul>
     </nav>
   </header>
