@@ -29,8 +29,13 @@ export const useProductStore = defineStore("product", () => {
     );
   }
 
+  function findProduct(id) {
+    return products.value.find((product) => product.id == id)
+  }
+
   return {
     products,
-    deleteProduct
+    deleteProduct,
+    findProduct
   };
 });

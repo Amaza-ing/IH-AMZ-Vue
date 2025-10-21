@@ -3,18 +3,18 @@ const props = defineProps({
   product: Object,
 });
 
-const emit = defineEmits([
-  "delete"
-])
+const emit = defineEmits(["delete"]);
 
 function deleteProduct() {
-  emit("delete", props.product.id)
+  emit("delete", props.product.id);
 }
 </script>
 
 <template>
   <article class="product-card">
-    <h2 class="product-name">{{ props.product.name }}</h2>
+    <RouterLink class="product-name" :to="`/products/${props.product.id}`">
+      {{ props.product.name }}
+    </RouterLink>
     <img :src="props.product.img" alt="product image" width="100" />
     <h4>{{ props.product.price }}€</h4>
     <button @click="deleteProduct">Delete</button>
