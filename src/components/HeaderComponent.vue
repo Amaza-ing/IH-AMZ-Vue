@@ -8,6 +8,7 @@
         <li><RouterLink to="/" class="link">Home</RouterLink></li>
         <li><RouterLink to="/products" class="link">Products</RouterLink></li>
         <li><RouterLink to="/basics" class="link">Vue Basics</RouterLink></li>
+        <li><RouterLink to="/users" class="link">Users</RouterLink></li>
       </ul>
     </nav>
   </header>
